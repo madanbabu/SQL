@@ -1,0 +1,17 @@
+Key points to consider:
+
+Replace 'NewDB' with your desired database name if you want to use a different name.
+Adjust the table schema (Column1 INT, Column2 VARCHAR(50) etc.) to match your CSV file's structure.
+
+Update the file path 'C:\temp\YourFileName.csv' to match the location and name of your CSV file.
+
+This query assumes the CSV file *has* a header row. If not, remove HDR=YES from the OPENROWSET parameters.
+Make sure the SQL Server service account has read permissions on the CSV file location.
+
+
+Best practices:
+Always backup your database before performing bulk imports.
+Consider using BULK INSERT for larger datasets, as it may be faster than OPENROWSET.
+Validate the imported data after the import to ensure accuracy.
+If the CSV file contains special characters or formatting issues, you might need to adjust the OPENROWSET parameters further.
+This query provides a straightforward way to import a CSV file into a new MSSQL database table. Remember to test this in a development environment first before running it on production systems.
